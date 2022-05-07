@@ -1,0 +1,19 @@
+<h3> Détails de la Publication </h3>
+<div>
+    <label><b>Date de Creation: </b></label> {{publication.dateC | date : 'EEEE, dd MMMM, yyyy'}}
+</div>
+<div>
+    <label><b>Note: </b></label> {{publication.note}}
+</div>
+<div>
+    <label><b>Type: </b></label> {{publication.type}}
+</div>
+<div>
+    <label><b>Description: </b></label> {{publication.description}}
+</div>
+<!-- <div>
+    <label><b>Utilisateur </b></label> {{publication.iduser.iduser}}
+</div> -->
+<div>
+    <label><b>Utilisateur: </b></label> {{publication.iduser.nom}}
+</div>

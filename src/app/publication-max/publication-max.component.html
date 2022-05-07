@@ -1,0 +1,34 @@
+<div class="container" align="center">
+
+
+    <div class="card">
+        <div class="card-content">
+            <h3>la publication a maximale note est : </h3>
+
+            <tr *ngIf="publication.note ==max "></tr>
+            <div>
+                <label><b>Date de Creation: </b></label> {{publication[0].dateC}}
+            </div>
+            <div>
+                <label><b>Note: </b></label> {{publication[0].note}}
+            </div>
+            <div>
+                <label><b>Type: </b></label> {{publication[0].type}}
+            </div>
+            <div>
+                <label><b>Description: </b></label> {{publication[0].description}}
+            </div>
+            <!-- <div>
+    <label><b>iduser </b></label> {{publication[0].iduser.iduser}}
+</div> -->
+            <div>
+                <label><b>Utilisateur: </b></label> {{publication[0].iduser.nom}}
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>

@@ -1,0 +1,40 @@
+<div class="col">
+    <h3>Modifier la Publication</h3>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <!-- <div class="form-group">
+            <label>id publication </label>
+            <input type="number" class="form-control" id="idpub"
+            [(ngModel)]="publication.idpub" name="idpub">
+
+        </div>
+        <div class="form-group" >
+            <label>Date creation  </label>
+            <input type="date" class="form-control" id="dateC"
+            [(ngModel)]="publication.dateC" name="dateC">
+        </div>
+        <div class="form-group" >
+            <label>note </label>
+            <input type="number" class="form-control" id="note"
+            [(ngModel)]="publication.note" name="note">
+        </div> -->
+
+        <label for="type">Type </label>
+        <select class="form-control" id="type" formControlName="type" name="type">
+            <option value="sport">Sport</option>
+            <option value="film">Film</option>
+            <option value="politique">Politique</option>
+            <option value="other">Other</option>
+        </select>
+        <br>
+        <label>Description </label>
+        <input type="text" class="form-control" id="description" formControlName="description" name="description">
+
+        <!-- <div class="form-group">
+            <label>iduser </label>
+            <input type="number" class="form-control" id="iduser" [(ngModel)]="publication.iduser" name="iduser">
+        </div> -->
+        <br>
+        <button class="btn btn-success" type="submit">Confirmer la mise à jour</button>
+
+    </form>
+</div>

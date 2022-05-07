@@ -1,0 +1,38 @@
+<div class="col-md-8-offset-md-3">
+<h3>create vote </h3>
+<form (ngSubmit) ="onSubmit()">
+    <div class="form-group" >
+    
+        <label>id </label>
+        <input type="string" class="form-control" id="id"
+        [(ngModel)]="vote.id" name="id">
+    </div>
+    <div class="form-group">
+    
+        <label>notevote </label>
+        <input type="string" class="form-control" id="vote.note"
+        [(ngModel)]="vote.note" name="vote.note"required
+        pattern="[0-1]">
+    </div>
+    <div class="form-group">
+    
+        <label>note </label>
+        <input type="number" class="form-control" id="publication.note"
+        [(ngModel)]="publication.note" name="publication.note">
+    </div>
+    <div class="form-group">
+    
+        <label>idpub </label>
+        <input type="number" class="form-control" id="idpub"
+        [(ngModel)]="publication.idpub" name="idpub">
+    </div>
+    <div class="form-group">
+    
+        <label>iduser </label>
+        <input type="number" class="form-control" id="iduser"
+        [(ngModel)]="publication.iduser.iduser" name="iduser">
+    </div>
+    <button class="btn btn-success" type="submit"></button>
+
+</form>
+</div>

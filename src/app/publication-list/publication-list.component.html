@@ -1,0 +1,151 @@
+<nav>
+    <div class="nav-left">
+        <img src="assets/images/logo.png" alt="Logo">
+        <input type="text" placeholder="Search Mediabook..">
+    </div>
+
+    <div class="nav-middle">
+        <a href="#" class="active">
+            <i class="fa fa-home"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa fa-user-friends"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa fa-play-circle"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa fa-users"></i>
+        </a>
+    </div>
+
+    <div class="nav-right">
+        <span class="profile"></span>
+
+        <a href="#">
+            <i class="fa fa-bell"></i>
+        </a>
+
+        <a href="#">
+            <i class="fas fa-ellipsis-h"></i>
+        </a>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="left-panel">
+        <ul>
+            <li>
+                <span class="profile"></span>
+                <p>Aashish Panthi</p>
+            </li>
+            <li>
+                <i class="fa fa-user-friends"></i>
+                <p>Friends</p>
+            </li>
+            <li>
+                <i class="fa fa-play-circle"></i>
+                <p>Videos</p>
+            </li>
+            <li>
+                <i class="fa fa-flag"></i>
+                <p>Pages</p>
+            </li>
+            <li>
+                <i class="fa fa-users"></i>
+                <p>Groups</p>
+            </li>
+            <li>
+                <i class="fa fa-bookmark"></i>
+                <p>Bookmark</p>
+            </li>
+            <li>
+                <i class="fab fa-facebook-messenger"></i>
+                <p>Inbox</p>
+            </li>
+            <li>
+                <i class="fas fa-calendar-week"></i>
+                <p>Events</p>
+            </li>
+            <li>
+                <i class="fa fa-bullhorn"></i>
+                <p>Ads</p>
+            </li>
+            <li>
+                <i class="fas fa-hands-helping"></i>
+                <p>Offers</p>
+            </li>
+            <li>
+                <i class="fas fa-briefcase"></i>
+                <p>Jobs</p>
+            </li>
+            <li>
+                <i class="fa fa-star"></i>
+                <p>Favourites</p>
+            </li>
+        </ul>
+
+    </div>
+
+
+    <div class="middle-panel">
+        <h2>Liste des Publications</h2>
+        <form>
+            <div class="form-group">
+                <input type="string" name="note" placeholder="chercher par nom de user" class="form-control"
+                    [(ngModel)]="notemax">
+                    
+            </div>
+        </form>
+
+
+
+        <div class="row">
+            <div class="col" *ngFor="let publication of publications">
+                <tr *ngIf="publication.iduser.nom == notemax || notemax==null">
+                
+                
+
+                <div class="card" style="width: 18rem;">
+                    
+                    <img class="card-img-top" [src]="convert(publication.image.data)" alt="Card image cap">
+                    <div class="card-body">
+                        
+                        <h5 class="card-title"><b>Sujet</b> : {{publication.type}}</h5>
+                        <h6 class="card-title"><b>Par</b> : {{publication.iduser.nom}}</h6>
+                        <h6 class="card-title"><b>Note</b> : {{publication.note}}</h6>
+                        <p class="card-text">{{publication.description}}</p>
+                        <button type="button" (click)="updatePublication(publication.idpub)"
+                            class="btn btn-primary">✎</button>&nbsp;
+                        <button type="button" (click)="deletePublication(publication.idpub)"
+                            class="btn btn-danger">🗑</button>&nbsp;
+                        <button type="button" (click)="publicationDetails(publication.idpub)"
+                            class="btn btn-warning">📝</button>
+                        <br><br>
+                        <button type="button" (click)="openComments(publication.commentaire,publication.idpub)"
+                            class="btn btn-dark">💬</button>&nbsp;
+                        <!-- <button type="button" class="btn btn-dark">🗳</button>&nbsp; -->
+                        <button type="button" (click)="likeButtonClick(publication.idpub)" class="btn"
+                            style="background-color: gray;">👍</button>&nbsp;
+                        <button type="button" (click)="dislikeButtonClick(publication.idpub)" class="btn"
+                            style="background-color: gray;">👎</button>
+
+
+
+                    </div>
+                </div>
+                </tr>
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+</div>
